@@ -1,0 +1,22 @@
+
+<div class = "container">
+	<form id="update_quest_char_form" action="/qc_browse" method="post">
+		<label>Enter the values below to update</label><br>
+		Character: <select name="char_id" id="qc_char_selector">
+			{{#each c_list}}
+				<option value="{{c_id}}">{{c_name}}</option>
+			{{/each}}
+		</select>
+		Quest: <select name="quest_id" id="qc_quest_selector">
+			{{#each q_list}}
+				<option value="{{q_id}}">{{q_name}}</option>
+			{{/each}}
+		</select>
+	</form>
+	<button onclick="update_quest_char({{qc_list.id}})">Update</button>
+</div>
+
+<script defer>
+	select_quest({{qc_list.quest_id}});
+	select_char({{qc_list.char_id}});
+</script>

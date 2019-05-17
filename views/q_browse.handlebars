@@ -1,0 +1,40 @@
+<div class="container">
+<form id="update_quest_form" action="/q_browse" method="post">
+		<label>Enter the values below to add a new quest</label><br>
+		Name: <input type="text" name="q_name">
+		Level: <input type="number" name="q_level">
+		Region: <select name="q_region">
+			{{#each r_list}}
+				<option value="{{r_id}}">{{r_name}}</option>
+			{{/each}}
+		</select>
+		<input type="submit" value="Submit">
+</form>
+</div>
+<br>
+
+<div class="r_tables">
+ <table id="quest_table">
+		<tr>
+			<th colspan = "4">Quest List</th>
+		</tr>
+		<tr>
+			<th>Id</th>
+			<th>Name</th>
+			<th>Level</th>
+			<th>Region</th>
+			<th></th>
+			<th></th>
+		</tr>
+		{{#each q_list}}
+		<tr>
+			<td>{{this.q_id}}</td>
+			<td>{{this.q_name}}</td>
+			<td>{{this.q_level}}</td>
+			<td>{{this.r_name}}</td>
+			<td><a href="/q_browse/{{this.q_id}}">Update</a></td>
+			<td><button onclick="delete_quest({{this.q_id}})">Delete</button></td>
+		</tr>
+		{{/each}}
+</table>
+</div>

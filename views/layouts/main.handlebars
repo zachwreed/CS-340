@@ -1,0 +1,26 @@
+<!doctype html>
+<html>
+	<head>
+		<title>Eso Database</title>
+		<meta charset = "UTF-8"></meta>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- scalability on differing devices -->
+		<link rel="stylesheet" type="text/css" href="/style.css">
+		<script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+		{{#each jsscripts}}
+			<script src="/static/{{this}}"></script>
+		{{/each}}
+	</head>
+	<body>
+		<body background ="home_background.jpg">
+		<div class="navibar">
+			<a href="/home">Home</a>
+			<a href="/q_browse">Quests</a>
+			<a href="/a_browse">Alliances</a>
+			<a href="/r_browse">Regions</a>
+			<a href="/c_browse">Characters</a>
+			<a href ="/qc_browse">Quest-Character</a>
+		</div>
+
+		{{{body}}}
+	</body>
+</html>

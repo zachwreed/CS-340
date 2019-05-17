@@ -1,0 +1,62 @@
+<br>
+<div class ="container">
+<form id = "searchchar" action='' method=''>
+		Search for character by name starting with:
+		<input id='name_search_string' type="text" name='name_search_string' value=''>
+		<input type="button" value="Search" onclick = "search_characters()"><br>
+</form>
+</div>
+<br>
+<div class="container">
+<form id="addchar" action="/c_browse" method="post">
+		<label>Enter the values below to add a new character</label><br>
+		Name: <input type="text" name="c_name">
+		Race: <input type="text" name="c_race">
+		Class: <input type="text" name="c_class">
+		Stone: <input type="text" name="c_stone">
+		Level: <input type="number" name="c_level">
+		Region: <select name="c_region">
+			{{#each r_list}}
+				<option value="{{this.r_id}}">{{this.r_name}}</option>
+			{{/each}}
+		</select>
+		Origin Alliance: <select name="c_origin_alliance">
+			{{#each a_list}}
+				<option value="{{a_id}}">{{a_name}}</option>
+			{{/each}}
+		</select>
+		<input type="submit" value="Submit">
+</form>
+</div>
+<br>
+
+ <table id="character_table">
+		<thead>
+			<th>Id</th>
+			<th>Name</th>
+			<th>Race</th>
+			<th>Class</th>
+			<th>Stone</th>
+			<th>Level</th>
+			<th>Region</th>
+			<th>Origin Alliance</th>
+		</thead>
+		<tbody>
+				{{#each c_list}}
+		<tr>
+			<td>{{this.c_id}}</td>
+			<td>{{this.c_name}}</td>
+			<td>{{this.c_race}}</td>
+			<td>{{this.c_class}}</td>
+			<td>{{this.c_stone}}</td>
+			<td>{{this.c_level}}</td>
+			<td>{{this.r_name}}</td>
+			<td>{{this.a_name}}</td>
+			<td><a href="/c_browse/{{this.c_id}}">Update</a></td>
+			<td><button onclick="delete_character({{this.c_id}})">Delete</button></td>
+		</tr>
+		{{/each}}
+		</tbody>
+</table>
+
+

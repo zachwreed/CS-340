@@ -1,0 +1,37 @@
+<div class="container">
+<form id="update_quest_char_form" action="/qc_browse" method="post">
+		<label>Enter the values below to add a new character-quest relationship</label><br>
+		Character: <select name="char_id">
+			{{#each c_list}}
+				<option value="{{c_id}}">{{c_name}}</option>
+			{{/each}}
+		</select>
+		Quest: <select name="quest_id">
+			{{#each q_list}}
+				<option value="{{q_id}}">{{q_name}}</option>
+			{{/each}}
+		</select>
+		<input type="submit" value="Submit">
+</form>
+</div>
+<br>
+
+<div class="r_tables">
+	<table id="char_quest_table">
+		<tr>
+			<th colspan="2">Characters' Quests</th>
+		</tr>
+		<tr>
+			<th>Character</th>
+			<th>Quest</th>
+		<tr>
+		{{#each qc_list}}
+			<tr>
+				<td>{{this.c_name}}</td>
+				<td>{{this.q_name}}</td>
+				<td><a href="/qc_browse/{{this.id}}">Update</a></td>
+				<td><button onclick="delete_quest_char({{this.id}})">Delete</button></td>
+			</tr>
+		{{/each}}
+	</table>
+</div>

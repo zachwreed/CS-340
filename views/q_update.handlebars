@@ -1,0 +1,15 @@
+
+<div class = "container">
+<form id="update_quest_form" action="/q_browse" method="post">
+		<label>Enter the values below to update the quest</label>
+		Name: <input type="text" name="q_name" value="{{q_list.q_name}}"
+		Level: <input type="number" name="q_level" value="{{q_list.q_level}}">
+		Region: <select name="q_region" id="quest_region_selector">
+			{{#each r_list}}
+				<option value="{{r_id}}">{{r_name}}</option>
+			{{/each}}
+		</select><br>
+</form>
+<button onclick="update_quest({{q_list.q_id}})">Update</button>
+</div>
+<script defer>select_region({{q_list.q_region}});</script>

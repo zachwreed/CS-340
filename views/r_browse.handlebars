@@ -1,0 +1,41 @@
+
+ <div class="r_tables">
+	<table id="region_table">
+		<tr>
+			<th colspan="3">ESO Regions</th>
+		</tr>
+		<tr>
+			<th>Id</th>
+			<th>Name</th>
+			<th>Alliance</th>
+		</tr>
+		{{#each r_list}}
+		<tr>
+			<td>{{this.r_id}}</td>
+			<td>{{this.r_name}}</td>
+			<td>{{this.a_name}}</td>
+		</tr>
+		{{/each}}
+	</table>
+</div>
+
+<div class="r_tables">
+	<table id="char_reg_table">
+		<tr>
+			<th colspan="2">Characters in Region</th>
+		</tr>
+		<tr>
+			<th>Character Name</th>
+			<th>Region Name</th>
+		</tr>
+	
+		{{#each cr_list}}
+			<tr>
+				<td>{{this.c_name}}</td>
+				<td>{{this.r_name}}</td>
+			</tr>
+		{{/each}}
+	</table>
+</div>
+
+

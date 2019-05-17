@@ -1,0 +1,29 @@
+
+<div class="container">
+<form id="update_char_form" action="/c_browse" method="post">
+	<fieldset>
+		<label>Update Character</label>
+		Name: <input type="text" name="c_name" value="{{c_list.c_name}}">
+		Race: <input type="text" name="c_race" value="{{c_list.c_race}}">
+		Class: <input type="text" name="c_class" value = "{{c_list.c_class}}">
+		Stone: <input type="text" name="c_stone" value = "{{c_list.c_stone}}">
+		Level: <input type="number" name="c_level" value = "{{c_list.c_level}}">
+		Region: <select name="c_region" id="c_region_selector">
+			{{#each r_list}}
+				<option value="{{this.r_id}}">{{this.r_name}}</option>
+			{{/each}}
+		</select>
+		Origin Alliance: <select name="c_origin_alliance" id="c_origin_alliance_selector">
+			{{#each a_list}}
+				<option value="{{a_id}}">{{a_name}}</option>
+			{{/each}}
+		</select><br>
+	</fieldset>
+</form>
+<button onclick="update_character({{c_list.c_id}})">Update</button>
+</div>
+
+<script defer>
+	select_region({{c_list.c_region}});
+	select_alliance({{c_list.c_origin_alliance}});
+</script>

@@ -1,0 +1,299 @@
+/*****************************************
+** Author: Zach Reed
+** Description: stylesheet for Backflow DB
+** Date: 8/5/2018
+*****************************************/
+
+html {
+	height: 100%;
+}
+
+body {
+	background: url(home_background.jpg) no-repeat center center fixed; 
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+	height: 100%;
+	background-size: cover;
+	background-position: center;
+	background-repeat: 	no-repeat;
+	font-family: Verdana, sans-serif;
+	margin:0;
+}
+/************************************************
+** Form CSS styling citation:
+** https://www.w3schools.com/css/css_form.asp
+*************************************************/
+input[type=text], select {
+    width: 200;
+    padding: 6px 20px;
+    margin: 8px 0;
+    display: block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+input[type=number], select {
+    width: 100;
+    padding: 6px 20px;
+    margin: 8px 0;
+    display: block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+input[type=submit] {
+    width: 100%;
+    background-color: #4CAF50;
+    color: white;
+    padding: 6px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+input[type=button] {
+    width: 100%;
+    background-color: #4CAF50;
+    color: white;
+    padding: 6px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+input[type=button]:hover {
+    background-color: #45a049;
+}
+
+input[type=submit]:hover {
+    background-color: #45a049;
+}
+
+div.container {
+    border-radius: 5px;
+    background-color: #f2f2f2;
+    padding: 20px;
+	width: 30%;
+}
+
+.r_tables {
+ color: #000000;
+ background-color: #CCCCCC;
+ margin: 2px;
+ height: 300px;
+ float: left;
+}
+
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: auto;
+	background-color: #c0c1c4;
+}
+
+td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+}
+
+tr:nth-child(even) {
+    background-color: #dddddd;
+}
+
+.grid-container_scroll {
+  display: grid;
+  height: 100%;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: 0.9fr 1.1fr 1fr 1fr 1fr 1fr;
+  grid-template-areas: ". . . . . ." ". scroll_outer scroll_outer scroll_outer scroll_outer ." ". scroll_outer scroll_outer scroll_outer scroll_outer ." ". scroll_outer scroll_outer scroll_outer scroll_outer ." ". scroll_outer scroll_outer scroll_outer scroll_outer ." ". . . . . .";
+}
+
+.grid-container_list {
+  display: grid;
+  height: 100%;
+  grid-template-columns: 1fr 0.2fr 1.5fr 1.6fr 1.5fr 0.2fr 1fr;
+  grid-template-rows: 1fr 0.2fr 1.8fr 1.8fr 0.2fr 1fr;
+  grid-template-areas: ". . . . . . ." ". list_border list_border list_border list_border list_border ." ". list_border list_border list_border list_border list_border ." ". list_border list_border list_border list_border list_border ." ". list_border list_border list_border list_border list_border ." ". . . . . . .";
+}
+
+.grid-container_dl_links {
+  display: grid;
+  height: 100%;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template-areas: ". . . . . . ." ". dl_links dl_links dl_links dl_links dl_links ." ". dl_links dl_links dl_links dl_links dl_links ." ". dl_links dl_links dl_links dl_links dl_links ." ". dl_links dl_links dl_links dl_links dl_links ." ". dl_links dl_links dl_links dl_links dl_links ." ". . . . . . .";
+}
+
+* {box-sizing: border-box;}
+
+.image { background-size: cover; }
+
+.navibar {
+	list-style-type: none; /* bulleted or not */
+	margin: 0;  /* top pos */
+	padding: 0; /* left pos */
+	overflow: hidden;
+	background-color: #34373a;	
+}
+
+.navibar a {
+	text-decoration: none;
+	display: block;		/* each tab   */
+	color: white;		/* text color */
+	text-align: center; 
+	padding: 16px 18px; /* width, height */
+	float: left;
+}
+
+.navibar a:hover {
+	background-color: #1d1e21;
+}
+
+.navibar a.active {
+	background-color: #5f8446;
+}
+
+/* Carousel Animation Styles ****************************************/
+
+.spacer {
+	height:40%;
+	size: 200 px;
+}
+
+.slide_container {
+	max-width: 500px;
+	position: relative;
+	margin: auto;
+	padding-top: 150px;
+}
+
+.slide_container:img {vertical-align: middle}
+
+.next, .prev {
+	position: absolute;
+	cursor: pointer;
+	top: 60%; /* arrow position */
+	width: auto;
+	margin-top: -20px; /*arrow position */
+	color: #ffffff;
+	font-size: 18px;
+	font-weight: bold;
+	transition: 8s ease;
+	border-radius: 1 3px 3px 1; /*first value applies to top-left corner, second value applies to top-right corner, third value applies to bottom-right corner, and fourth value applies to bottom-left corner*/
+}
+
+.next {
+	right: 0;
+	border-radius: 3px 1 1 3px;
+}
+
+
+.my_slide {
+	display: none;
+}
+
+.slide_caption_text {
+	color: #ffffff;
+	font-size: 14 px;
+	padding: 12px 8px;
+	position: absolute;
+	bottom: 8px;
+	width: 100%;
+	text-align: center;
+}
+
+.citation {
+	 position: absolute;
+    bottom: 1;
+    left: 1;
+	font-size: 14px;
+	color: black;
+}
+
+/* about.html Class Styles *************************************/
+
+.scroll_box {
+	grid-area: 3 / 3 / 5 / 5;
+	background-color: #9db59d;
+	margin: auto;
+	padding: 5px 5px;
+	height: 80%;
+	width:  80%;
+	border: 1px solid black;
+	font-size: 14px;
+	overflow: auto;
+}
+
+.scroll_outer { 
+	grid-area: scroll_outer;
+	border-radius: 50%;
+	background-color: #3b7732;
+	height: 75%;
+	width: 75%;
+	margin: auto;
+}
+
+.about_h1 { 
+	grid-area: 2 / 3 / 3 / 5;
+	margin: auto;
+	padding-top: 100px;
+	font-size: 24px;
+	height: 80%;
+	width:  80%;
+}
+
+/*game.html Class Styles ****************************************/
+
+.list_content { 
+	grid-area: 3 / 3 / 5 / 6; 
+	font-size: 16px;
+	background-color: #9db59d;
+	padding-left: 10px;
+	}
+
+.list_border { 
+	grid-area: list_border;
+	padding: 5px 5px;
+	height: 75%;
+	width: 75%;
+	margin: auto;
+	}
+
+/* download.html Class Styles ************************************/
+
+.dl_links { 
+	grid-area: dl_links;
+	padding: 5px 5px;
+	height: 100%;
+	width: 90%;
+	margin: auto;
+	font-size: 16px;
+	background-color: #9db59d;	
+}
+
+.download_link { 
+	grid-area: 3 / 4 / 4 / 5; 
+}
+
+.link_out { 
+	grid-area: 5 / 4 / 6 / 5; 
+	
+}
+
+
+
+
+
+
+
+
+
+
+
